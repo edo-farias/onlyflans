@@ -3,6 +3,19 @@
 {% block title %}Index{% endblock %}
 
 {% block content %}
-Índice
+
+<div class="row">
+    {% for flan in flanes %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ flan.name }}</h5>
+                    <p class="card-text">{{ flan.description }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
     
