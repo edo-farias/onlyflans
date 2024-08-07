@@ -3,6 +3,11 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
+<!-- Encabezado de bienvenida -->
+<div class="alert alert-dark" role="alert">
+    <h4 class="alert-heading">¡Bienvenido, {{ user.username }}!</h4>
+    <p>Estamos felices de tenerte aquí. Explora nuestros deliciosos flanes.</p>
+</div>
 <div class="row">
     {% for flan in flanes %}
         <div class="col-md-4">
@@ -11,6 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ flan.name }}</h5>
                     <p class="card-text">{{ flan.description }}</p>
+                    <a href="{% url 'flan_detail' flan.slug %}" class="btn btn-dark">Ver Detalles</a>
                 </div>
             </div>
         </div>
